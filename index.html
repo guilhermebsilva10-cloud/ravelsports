@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravel Sports — Notícias Esportivas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="date" id="today-date">Segunda-feira, 28 de setembro de 2026</span>
+  </div>
+</div>
+
+<header class="main">
+  <div class="wrap">
+    <a href="#" class="logo"><span class="a1">Ravel</span><span class="a2">Sports</span></a>
+    <nav class="primary" id="primary-nav">
+      <a href="#" class="active" data-i18n="nav.inicio">Início</a>
+      <a href="#futebol" data-i18n="nav.esportes">Esportes diversos</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn" href="login.html" id="entrar-btn" data-i18n="btn.entrar" style="display:inline-block;text-decoration:none;">Entrar</a>
+      <div class="profile-menu" id="profile-menu" style="display:none;">
+        <button class="profile-icon-btn" id="profile-icon-btn" aria-label="Minha conta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="8" r="4" fill="#fff"/>
+            <path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7" fill="#fff"/>
+          </svg>
+        </button>
+        <div class="profile-dropdown" id="profile-dropdown">
+          <div class="pd-welcome"><span data-i18n="pd.welcome">Bem-vindo!</span> <span id="pd-name">Torcedor</span>!</div>
+          <div class="pd-divider"></div>
+          <button class="pd-row" id="pd-region-btn">
+            <span id="pd-region-flag">🇧🇷</span> <span data-i18n="pd.region">Região:</span> <span id="pd-region-name">Brasil</span>
+          </button>
+          <div class="pd-divider"></div>
+          <a href="javascript:void(0)" class="pd-row" onclick="ravelLogout()" data-i18n="pd.sair">Sair</a>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero-section">
+  <div class="wrap hero-grid">
+    <a class="hero-main" href="https://www.conmebol.com/pt-br/noticias-pt-br/flamengo-faz-historia-e-conquista-o-quarto-titulo-da-conmebol-libertadores-2025/" target="_blank" rel="noopener">
+      <div class="hero-content">
+        <span class="tag-pill" data-i18n="hero.tag">Libertadores 2025 · Final</span>
+        <h1 data-i18n="hero.title">Flamengo vence o Palmeiras por 1 a 0 em Lima e conquista o tetracampeonato da Libertadores</h1>
+        <p data-i18n="hero.text">Danilo marcou de cabeça aos 21 minutos do segundo tempo, em cobrança de escanteio de Arrascaeta, e decidiu a decisão disputada no Estádio Monumental "U", no Peru. Com o título, o Rubro-Negro se torna o maior campeão brasileiro da competição, à frente de Palmeiras, São Paulo, Santos e Grêmio.</p>
+        <div class="byline"><b data-i18n="hero.bylineRole">Redação Ravel Sports</b> · <span data-i18n="hero.bylineRest">há 12 minutos · leitura de 4 min</span></div>
+      </div>
+    </a>
+    <div class="hero-side">
+      <a class="side-card" href="https://www.cnnbrasil.com.br/esportes/automobilismo/norris-vence-gp-da-hungria-e-conquista-1a-vitoria-da-mclaren-no-ano/" target="_blank" rel="noopener">
+        <div class="side-thumb" style="background-image:url('https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/07/f1-hungia-e1785076379594.jpg');"></div>
+        <div class="side-body">
+          <span class="cat" data-i18n="side1.cat">Fórmula 1</span>
+          <h3 data-i18n="side1.title">Norris vence GP da Hungria e crava 1ª vitória da McLaren na temporada</h3>
+          <span class="meta" data-i18n="side1.meta">há 12 dias</span>
+        </div>
+      </a>
+      <a class="side-card" href="https://www.cnnbrasil.com.br/esportes/basquete/lebron-james-explica-escolha-pelos-76ers-nao-e-por-dinheiro/" target="_blank" rel="noopener">
+        <div class="side-thumb" style="background-image:url('https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/07/lebron_james_lakers-e1784920636978.jpg');"></div>
+        <div class="side-body">
+          <span class="cat" data-i18n="side2.cat">Basquete</span>
+          <h3 data-i18n="side2.title">Agente de LeBron James cita "montanha-russa emocional" e detalha escolha do astro pelos 76ers</h3>
+          <span class="meta" data-i18n="side2.meta">há 1 hora</span>
+        </div>
+      </a>
+      <a class="side-card" href="https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/futebol-espanhol/vini-jr-renova-contrato-com-o-real-madrid-ate-2032/" target="_blank" rel="noopener">
+        <div class="side-thumb" style="background-image:url('https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/05/GettyImages-2274344158-e1777849693996.jpg');"></div>
+        <div class="side-body">
+          <span class="cat" data-i18n="side3.cat">Mercado da bola</span>
+          <h3 data-i18n="side3.title">Real Madrid encerra novela e confirma renovação de Vinícius Júnior até 2032</h3>
+          <span class="meta" data-i18n="side3.meta">há 2 horas</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section border-top" id="futebol">
+  <div class="wrap content-grid">
+    <div>
+      <div class="section-head">
+        <h2><span class="dash">//</span> <span data-i18n="section.title">Últimas do Esporte</span></h2>
+        <a class="viewall" href="#" data-i18n="section.viewall">Ver tudo</a>
+      </div>
+      <div class="news-grid">
+        <a class="news-card" href="https://www.lance.com.br/formula-1/sucesso-de-hamilton-interfere-em-futuro-de-jovem-piloto-da-f1.html" target="_blank" rel="noopener">
+          <div class="news-thumb" style="background-image:url('https://lncimg.lance.com.br/cdn-cgi/image/width=950,quality=60,fit=pad,format=webp/uploads/2026/08/AFP__20260524__B3X26QZ__v1__MidRes__AutoFormulaOneCanadianGrandPrixGrandPrix-aspect-ratio-512-320.jpg');"><span class="badge" data-i18n="news1.badge">Análise</span></div>
+          <div class="news-body">
+            <h3 data-i18n="news1.title">Sucesso de Hamilton interfere em futuro de jovem piloto da F1</h3>
+            <p data-i18n="news1.text">Oliver Bearman admite que a boa fase do heptacampeão na Ferrari dificulta uma futura promoção do britânico para a equipe italiana.</p>
+            <div class="meta"><span data-i18n="news1.cat">Fórmula 1</span><span data-i18n="news1.time">há 3 h</span></div>
+          </div>
+        </a>
+        <a class="news-card" href="https://ge.globo.com/ba/futebol/copa-do-brasil/noticia/2026/08/06/quartas-de-final-da-copa-do-brasil-2026-veja-classificados-datas-e-detalhes-do-sorteio.ghtml" target="_blank" rel="noopener">
+          <div class="news-thumb" style="background-image:url('https://assets.goal.com/images/v3/bltadb9a65e6cab634c/copa_do_brasil_1920.jpg');"><span class="badge" data-i18n="news2.badge">Copa</span></div>
+          <div class="news-body">
+            <h3 data-i18n="news2.title">Copa do Brasil define os 8 classificados para as quartas de final</h3>
+            <p data-i18n="news2.text">Santos, Palmeiras, Atlético-MG, Vasco, Cruzeiro, Grêmio, Internacional e Vitória avançam. Jogos de ida em 26/27 de agosto e volta em 2/3 de setembro.</p>
+            <div class="meta"><span data-i18n="news2.cat">Copa do Brasil</span><span data-i18n="news2.time">há 4 h</span></div>
+          </div>
+        </a>
+        <a class="news-card" href="https://www.cnnbrasil.com.br/esportes/basquete/nba-vira-a-2a-liga-mais-rica-do-mundo-apos-superar-a-mlb/" target="_blank" rel="noopener">
+          <div class="news-thumb" style="background-image:url('https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/06/Apos-titulo-dos-Knicks-Jalen-Brunson-e-eleito-MVP-das-Finais-da-NBA-e1781411205405.jpg');"><span class="badge" data-i18n="news3.badge">NBA</span></div>
+          <div class="news-body">
+            <h3 data-i18n="news3.title">NBA vira a 2ª liga mais rica do mundo após superar a MLB</h3>
+            <p data-i18n="news3.text">Liga de basquete bateu recorde de receita com US$ 14 bilhões e ultrapassou o beisebol, mas a NFL segue isolada na liderança global.</p>
+            <div class="meta"><span data-i18n="news3.cat">Basquete</span><span data-i18n="news3.time">há 5 h</span></div>
+          </div>
+        </a>
+        <a class="news-card" href="https://ge.globo.com/volei/noticia/2026/07/26/brasil-garante-premiacao-milionaria-com-vice-campeonato-na-vnl-veja-valor.ghtml" target="_blank" rel="noopener">
+          <div class="news-thumb" style="background-image:url('https://lncimg.lance.com.br/cdn-cgi/image/width=950,quality=60,fit=pad,format=webp/uploads/2026/07/ana-cristina-brasil-italia-vnl2-aspect-ratio-512-320.jpg');"><span class="badge" data-i18n="news4.badge">Vôlei</span></div>
+          <div class="news-body">
+            <h3 data-i18n="news4.title">Brasil garante premiação milionária com vice-campeonato na VNL</h3>
+            <p data-i18n="news4.text">Seleção feminina perdeu a final para a Turquia por 3 sets a 1, mas fatura cerca de R$ 3 milhões somando o prêmio de vice e os bônus da fase classificatória.</p>
+            <div class="meta"><span data-i18n="news4.cat">Vôlei</span><span data-i18n="news4.time">há 6 h</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <aside>
+      <div class="sidebar-block">
+        <div class="sb-head"><span data-i18n="standings.label">Tabela</span> <span class="tag">Brasileirão · Série A</span></div>
+        <table class="standings">
+          <thead>
+            <tr><th class="num">#</th><th data-i18n="table.team">Time</th><th class="num" data-i18n="table.played">J</th><th class="num" data-i18n="table.pts">Pts</th></tr>
+          </thead>
+          <tbody>
+            <tr class="top4"><td>1</td><td class="team">Palmeiras</td><td class="num">21</td><td class="pts">47</td></tr>
+            <tr class="top4"><td>2</td><td class="team">Flamengo</td><td class="num">20</td><td class="pts">39</td></tr>
+            <tr class="top4"><td>3</td><td class="team">Athletico-PR</td><td class="num">21</td><td class="pts">37</td></tr>
+            <tr class="top4"><td>4</td><td class="team">Fluminense</td><td class="num">21</td><td class="pts">34</td></tr>
+            <tr><td>5</td><td class="team">Bahia</td><td class="num">20</td><td class="pts">33</td></tr>
+            <tr><td>6</td><td class="team">São Paulo</td><td class="num">21</td><td class="pts">32</td></tr>
+            <tr><td>7</td><td class="team">Corinthians</td><td class="num">20</td><td class="pts">30</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sb-head" data-i18n="mostread.title">Mais lidas</div>
+        <ul class="most-read">
+          <li><span class="rank">01</span><a href="https://ge.globo.com/olimpiadas/blogs/brasil-em-los-angeles/noticia/2026/07/20/opiniao-queda-da-selecao-de-volei-passa-por-geracao-sem-craques-e-postura-apatica.ghtml" target="_blank" rel="noopener" data-i18n="mostread1">Opinião: queda da seleção de vôlei passa por geração sem craques e postura apática</a></li>
+          <li><span class="rank">02</span><a href="https://www.espn.com.br/futebol/corinthians/artigo/_/id/17088060/corinthians-provocacao-carlos-miguel-goleiro-palmeiras-apos-eliminacao-para-inter-copa-do-brasil" target="_blank" rel="noopener" data-i18n="mostread2">A provocação de Carlos Miguel, goleiro do Palmeiras, após eliminação do Corinthians</a></li>
+          <li><span class="rank">03</span><a href="https://www.metropoles.com/colunas/ilca-maria-estevao/bone-do-new-york-knicks-vira-fenomeno-de-moda-apos-titulo-da-nba" target="_blank" rel="noopener" data-i18n="mostread3">Boné do New York Knicks vira fenômeno de moda após título da NBA</a></li>
+          <li><span class="rank">04</span><a href="https://www.terra.com.br/esportes/automobilismo/formula1/capacete-da-disney-assinado-por-todo-o-grid-da-f1-bate-recorde-em-leilao-beneficente,54503a8d7cc4a7572ea792678adaa9da296js0zv.html" target="_blank" rel="noopener" data-i18n="mostread4">Capacete da Disney assinado por todo o grid da F1 bate recorde em leilão beneficente</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="region-overlay" id="region-overlay">
+  <div class="region-modal">
+    <div class="region-modal-head">
+      <h3 data-i18n="region.modalTitle">Selecionar Região</h3>
+      <button class="region-close" id="region-close" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="region-current" id="region-current">
+      <span id="region-current-flag">🇧🇷</span>
+      <span id="region-current-name">Brasil</span>
+      <span class="region-check">✓</span>
+    </div>
+    <div class="region-columns" id="region-columns"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo" style="margin-bottom:14px;">
+          <span class="a1" style="font-size:26px;">Ravel</span><span class="a2" style="font-size:11px;">Sports</span>
+        </a>
+        <p style="color:var(--text-dim);font-size:13px;max-width:280px;" data-i18n="footer.tagline">Cobertura completa do esporte nacional e internacional, 24 horas por dia.</p>
+      </div>
+      <div>
+        <h5 data-i18n="footer.editoriasHead">Editorias</h5>
+        <ul>
+          <li><a href="https://www.uol.com.br/esporte/futebol/" data-i18n="footer.futebol">Futebol</a></li>
+          <li><a href="https://www.espn.com.br/nba/" data-i18n="footer.basquete">Basquete</a></li>
+          <li><a href="https://www.espn.com.br/voleibol/" data-i18n="footer.volei">Vôlei</a></li>
+          <li><a href="https://www.uol.com.br/esporte/f1/" data-i18n="footer.f1">Fórmula 1</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="footer.sobreHead">Sobre nós</h5>
+        <ul>
+          <li><a href="https://www.instagram.com/_ravelsports/">Instagram</a></li>
+          <li><a href="C:/Users/TIMS01/OneDrive - SESISENAISP - Escolas/Área de Trabalho/ravel sports site/Manual da Marca.pdf" data-i18n="footer.manual">Manual da marca</a></li>
+          <li><a href="mailto:guilherme.b.silva10@edu.senai.br" data-i18n="footer.contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">&copy; 2026 Ravel Sports. Todos os direitos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Alterna entre botão "Entrar" e ícone de perfil, conforme o login (demonstração)
+  const entrarBtn = document.getElementById('entrar-btn');
+  const profileMenu = document.getElementById('profile-menu');
+  const profileIconBtn = document.getElementById('profile-icon-btn');
+  const profileDropdown = document.getElementById('profile-dropdown');
+  const pdName = document.getElementById('pd-name');
+  const pdRegionBtn = document.getElementById('pd-region-btn');
+  const pdRegionFlag = document.getElementById('pd-region-flag');
+  const pdRegionName = document.getElementById('pd-region-name');
+  const regionOverlay = document.getElementById('region-overlay');
+  const regionClose = document.getElementById('region-close');
+  const regionColumns = document.getElementById('region-columns');
+  const regionCurrentFlag = document.getElementById('region-current-flag');
+  const regionCurrentName = document.getElementById('region-current-name');
+
+  // Lista de regiões disponíveis, agrupadas por continente
+  const REGIONS = {
+    "América do Sul": [
+      ["🇧🇷","Brasil"],["🇦🇷","Argentina"],["🇨🇱","Chile"],["🇨🇴","Colômbia"],
+      ["🇪🇨","Equador"],["🇵🇪","Peru"],["🇺🇾","Uruguai"],["🇻🇪","Venezuela"]
+    ],
+    "América Central": [
+      ["🇨🇷","Costa Rica"],["🇬🇹","Guatemala"],["🇵🇦","Panamá"],["🇩🇴","República Dominicana"]
+    ],
+    "América do Norte": [
+      ["🇺🇸","EUA - Espanhol"],["🇺🇸","EUA - Inglês"],["🇲🇽","México"]
+    ],
+    "Europa": [
+      ["🇳🇱","Holanda"],["🇬🇧","Inglaterra"]
+    ],
+    "Ásia": [
+      ["🇵🇭","Filipinas"],["🇮🇳","Índia"]
+    ],
+    "Oceania": [
+      ["🇦🇺","Austrália"]
+    ],
+    "Outro": [
+      ["🌐","Global"]
+    ]
+  };
+
+  function buildRegionModal(){
+    regionColumns.innerHTML = '';
+    Object.keys(REGIONS).forEach(continent => {
+      const group = document.createElement('div');
+      group.className = 'region-group';
+      const heading = document.createElement('h4');
+      heading.textContent = continent;
+      const list = document.createElement('ul');
+      REGIONS[continent].forEach(([flag, name]) => {
+        const li = document.createElement('li');
+        li.className = 'region-item';
+        li.innerHTML = `<span>${flag}</span><span>${name}</span>`;
+        li.addEventListener('click', () => selectRegion(flag, name));
+        list.appendChild(li);
+      });
+      group.appendChild(heading);
+      group.appendChild(list);
+      regionColumns.appendChild(group);
+    });
+  }
+
+  function selectRegion(flag, name){
+    localStorage.setItem('ravel_region_flag', flag);
+    localStorage.setItem('ravel_region_name', name);
+    applyRegion();
+    applyLanguageForRegion(name);
+    regionOverlay.classList.remove('open');
+  }
+
+  function applyRegion(){
+    const flag = localStorage.getItem('ravel_region_flag') || '🇧🇷';
+    const name = localStorage.getItem('ravel_region_name') || 'Brasil';
+    pdRegionFlag.textContent = flag;
+    pdRegionName.textContent = name;
+    regionCurrentFlag.textContent = flag;
+    regionCurrentName.textContent = name;
+  }
+
+  // Mapa região -> idioma
+  const REGION_LANG = {
+    "Brasil": "pt",
+    "Argentina": "es", "Chile": "es", "Colômbia": "es", "Equador": "es",
+    "Peru": "es", "Uruguai": "es", "Venezuela": "es",
+    "Costa Rica": "es", "Guatemala": "es", "Panamá": "es", "República Dominicana": "es",
+    "México": "es", "EUA - Espanhol": "es",
+    "EUA - Inglês": "en", "Inglaterra": "en", "Austrália": "en",
+    "Filipinas": "en", "Índia": "en", "Holanda": "en", "Global": "en"
+  };
+
+  const I18N = {
+    pt: {
+      "nav.inicio":"Início","nav.esportes":"Esportes diversos","btn.entrar":"Entrar",
+      "pd.welcome":"Bem-vindo!","pd.region":"Região:","pd.sair":"Sair",
+      "hero.tag":"Libertadores 2025 · Final",
+      "hero.title":"Flamengo vence o Palmeiras por 1 a 0 em Lima e conquista o tetracampeonato da Libertadores",
+      "hero.text":"Danilo marcou de cabeça aos 21 minutos do segundo tempo, em cobrança de escanteio de Arrascaeta, e decidiu a decisão disputada no Estádio Monumental \"U\", no Peru. Com o título, o Rubro-Negro se torna o maior campeão brasileiro da competição, à frente de Palmeiras, São Paulo, Santos e Grêmio.",
+      "hero.bylineRole":"Redação Ravel Sports","hero.bylineRest":"há 12 minutos · leitura de 4 min",
+      "side1.cat":"Fórmula 1","side1.title":"Norris vence GP da Hungria e crava 1ª vitória da McLaren na temporada","side1.meta":"há 12 dias",
+      "side2.cat":"Basquete","side2.title":"Agente de LeBron James cita \"montanha-russa emocional\" e detalha escolha do astro pelos 76ers","side2.meta":"há 1 hora",
+      "side3.cat":"Mercado da bola","side3.title":"Real Madrid encerra novela e confirma renovação de Vinícius Júnior até 2032","side3.meta":"há 2 horas",
+      "section.title":"Últimas do Esporte","section.viewall":"Ver tudo",
+      "news1.badge":"Análise","news1.title":"Sucesso de Hamilton interfere em futuro de jovem piloto da F1","news1.text":"Oliver Bearman admite que a boa fase do heptacampeão na Ferrari dificulta uma futura promoção do britânico para a equipe italiana.","news1.cat":"Fórmula 1","news1.time":"há 3 h",
+      "news2.badge":"Copa","news2.title":"Copa do Brasil define os 8 classificados para as quartas de final","news2.text":"Santos, Palmeiras, Atlético-MG, Vasco, Cruzeiro, Grêmio, Internacional e Vitória avançam. Jogos de ida em 26/27 de agosto e volta em 2/3 de setembro.","news2.cat":"Copa do Brasil","news2.time":"há 4 h",
+      "news3.badge":"NBA","news3.title":"NBA vira a 2ª liga mais rica do mundo após superar a MLB","news3.text":"Liga de basquete bateu recorde de receita com US$ 14 bilhões e ultrapassou o beisebol, mas a NFL segue isolada na liderança global.","news3.cat":"Basquete","news3.time":"há 5 h",
+      "news4.badge":"Vôlei","news4.title":"Brasil garante premiação milionária com vice-campeonato na VNL","news4.text":"Seleção feminina perdeu a final para a Turquia por 3 sets a 1, mas fatura cerca de R$ 3 milhões somando o prêmio de vice e os bônus da fase classificatória.","news4.cat":"Vôlei","news4.time":"há 6 h",
+      "standings.label":"Tabela","table.team":"Time","table.played":"J","table.pts":"Pts",
+      "mostread.title":"Mais lidas",
+      "mostread1":"Opinião: queda da seleção de vôlei passa por geração sem craques e postura apática",
+      "mostread2":"A provocação de Carlos Miguel, goleiro do Palmeiras, após eliminação do Corinthians",
+      "mostread3":"Boné do New York Knicks vira fenômeno de moda após título da NBA",
+      "mostread4":"Capacete da Disney assinado por todo o grid da F1 bate recorde em leilão beneficente",
+      "region.modalTitle":"Selecionar Região",
+      "footer.tagline":"Cobertura completa do esporte nacional e internacional, 24 horas por dia.",
+      "footer.editoriasHead":"Editorias","footer.futebol":"Futebol","footer.basquete":"Basquete","footer.volei":"Vôlei","footer.f1":"Fórmula 1",
+      "footer.sobreHead":"Sobre nós","footer.manual":"Manual da marca","footer.contato":"Contato",
+      "footer.copyright":"© 2026 Ravel Sports. Todos os direitos reservados."
+    },
+    en: {
+      "nav.inicio":"Home","nav.esportes":"Other Sports","btn.entrar":"Log in",
+      "pd.welcome":"Welcome!","pd.region":"Region:","pd.sair":"Log out",
+      "hero.tag":"Libertadores 2025 · Final",
+      "hero.title":"Flamengo beats Palmeiras 1-0 in Lima to win record fourth Copa Libertadores title",
+      "hero.text":"Danilo headed home in the 21st minute of the second half, from an Arrascaeta corner, to decide the final at Estadio Monumental \"U\" in Peru. With the title, Flamengo becomes Brazil's most successful club in the competition, ahead of Palmeiras, São Paulo, Santos and Grêmio.",
+      "hero.bylineRole":"Ravel Sports Newsroom","hero.bylineRest":"12 minutes ago · 4 min read",
+      "side1.cat":"Formula 1","side1.title":"Norris wins the Hungarian GP, McLaren's first victory of the season","side1.meta":"12 days ago",
+      "side2.cat":"Basketball","side2.title":"LeBron James' agent calls it an \"emotional rollercoaster\", explains star's move to the 76ers","side2.meta":"1 hour ago",
+      "side3.cat":"Transfer news","side3.title":"Real Madrid ends the saga, confirms Vinícius Júnior's contract renewal through 2032","side3.meta":"2 hours ago",
+      "section.title":"Latest in Sports","section.viewall":"See all",
+      "news1.badge":"Analysis","news1.title":"Hamilton's success is complicating a young F1 driver's future","news1.text":"Oliver Bearman admits the seven-time champion's strong form at Ferrari makes a future promotion to the Italian team harder to come by.","news1.cat":"Formula 1","news1.time":"3h ago",
+      "news2.badge":"Cup","news2.title":"Copa do Brasil sets the 8 quarterfinalists","news2.text":"Santos, Palmeiras, Atlético-MG, Vasco, Cruzeiro, Grêmio, Internacional and Vitória advance. First legs Aug. 26-27, second legs Sept. 2-3.","news2.cat":"Copa do Brasil","news2.time":"4h ago",
+      "news3.badge":"NBA","news3.title":"NBA becomes the world's 2nd-richest league, overtaking MLB","news3.text":"The basketball league set a revenue record of $14 billion, passing baseball, though the NFL remains far ahead globally.","news3.cat":"Basketball","news3.time":"5h ago",
+      "news4.badge":"Volleyball","news4.title":"Brazil secures a big payday with runner-up finish at the VNL","news4.text":"The women's team lost the final to Turkey 3 sets to 1, but still earned about $600,000 combining the runner-up prize with group-stage bonuses.","news4.cat":"Volleyball","news4.time":"6h ago",
+      "standings.label":"Standings","table.team":"Team","table.played":"P","table.pts":"Pts",
+      "mostread.title":"Most read",
+      "mostread1":"Opinion: Brazil's volleyball slump comes down to a generation without stars and a listless attitude",
+      "mostread2":"Palmeiras goalkeeper Carlos Miguel's dig after Corinthians' elimination",
+      "mostread3":"New York Knicks cap becomes a fashion phenomenon after NBA title",
+      "mostread4":"Disney helmet signed by the entire F1 grid sets record at charity auction",
+      "region.modalTitle":"Select Region",
+      "footer.tagline":"Complete coverage of national and international sports, 24 hours a day.",
+      "footer.editoriasHead":"Sections","footer.futebol":"Soccer","footer.basquete":"Basketball","footer.volei":"Volleyball","footer.f1":"Formula 1",
+      "footer.sobreHead":"About us","footer.manual":"Brand guidelines","footer.contato":"Contact",
+      "footer.copyright":"© 2026 Ravel Sports. All rights reserved."
+    },
+    es: {
+      "nav.inicio":"Inicio","nav.esportes":"Otros deportes","btn.entrar":"Iniciar sesión",
+      "pd.welcome":"¡Bienvenido!","pd.region":"Región:","pd.sair":"Cerrar sesión",
+      "hero.tag":"Libertadores 2025 · Final",
+      "hero.title":"Flamengo vence a Palmeiras 1 a 0 en Lima y conquista el tetracampeonato de la Libertadores",
+      "hero.text":"Danilo anotó de cabeza a los 21 minutos del segundo tiempo, tras un córner de Arrascaeta, y decidió la final disputada en el Estadio Monumental \"U\", en Perú. Con el título, el Rubro-Negro se convierte en el mayor campeón brasileño de la competición, por delante de Palmeiras, São Paulo, Santos y Grêmio.",
+      "hero.bylineRole":"Redacción Ravel Sports","hero.bylineRest":"hace 12 minutos · lectura de 4 min",
+      "side1.cat":"Fórmula 1","side1.title":"Norris gana el GP de Hungría, primera victoria de McLaren en la temporada","side1.meta":"hace 12 días",
+      "side2.cat":"Baloncesto","side2.title":"El agente de LeBron James habla de una \"montaña rusa emocional\" y detalla la elección de la estrella por los 76ers","side2.meta":"hace 1 hora",
+      "side3.cat":"Mercado de fichajes","side3.title":"El Real Madrid pone fin a la novela y confirma la renovación de Vinícius Júnior hasta 2032","side3.meta":"hace 2 horas",
+      "section.title":"Últimas del deporte","section.viewall":"Ver todo",
+      "news1.badge":"Análisis","news1.title":"El éxito de Hamilton complica el futuro de un joven piloto de la F1","news1.text":"Oliver Bearman admite que el gran momento del heptacampeón en Ferrari dificulta un futuro ascenso del británico al equipo italiano.","news1.cat":"Fórmula 1","news1.time":"hace 3 h",
+      "news2.badge":"Copa","news2.title":"La Copa de Brasil define a los 8 clasificados a cuartos de final","news2.text":"Santos, Palmeiras, Atlético-MG, Vasco, Cruzeiro, Grêmio, Internacional y Vitória avanzan. Partidos de ida el 26/27 de agosto y vuelta el 2/3 de septiembre.","news2.cat":"Copa de Brasil","news2.time":"hace 4 h",
+      "news3.badge":"NBA","news3.title":"La NBA se convierte en la 2ª liga más rica del mundo tras superar a la MLB","news3.text":"La liga de baloncesto batió un récord de ingresos con US$ 14.000 millones y superó al béisbol, aunque la NFL sigue liderando en solitario a nivel mundial.","news3.cat":"Baloncesto","news3.time":"hace 5 h",
+      "news4.badge":"Vóleibol","news4.title":"Brasil asegura una premiación millonaria como subcampeón de la VNL","news4.text":"La selección femenina perdió la final ante Turquía por 3 sets a 1, pero embolsó cerca de US$ 600.000 sumando el premio de subcampeona con los bonos de la fase de grupos.","news4.cat":"Vóleibol","news4.time":"hace 6 h",
+      "standings.label":"Tabla","table.team":"Equipo","table.played":"PJ","table.pts":"Pts",
+      "mostread.title":"Más leídas",
+      "mostread1":"Opinión: la caída de la selección de vóleibol se debe a una generación sin cracks y una actitud apática",
+      "mostread2":"La provocación de Carlos Miguel, portero de Palmeiras, tras la eliminación de Corinthians",
+      "mostread3":"La gorra de los New York Knicks se convierte en un fenómeno de moda tras el título de la NBA",
+      "mostread4":"Casco de Disney firmado por toda la parrilla de la F1 bate récord en subasta benéfica",
+      "region.modalTitle":"Seleccionar región",
+      "footer.tagline":"Cobertura completa del deporte nacional e internacional, las 24 horas.",
+      "footer.editoriasHead":"Secciones","footer.futebol":"Fútbol","footer.basquete":"Baloncesto","footer.volei":"Vóleibol","footer.f1":"Fórmula 1",
+      "footer.sobreHead":"Sobre nosotros","footer.manual":"Manual de marca","footer.contato":"Contacto",
+      "footer.copyright":"© 2026 Ravel Sports. Todos los derechos reservados."
+    }
+  };
+
+  function applyLanguageForRegion(regionName){
+    const lang = REGION_LANG[regionName] || 'pt';
+    localStorage.setItem('ravel_lang', lang);
+    applyLanguage(lang);
+  }
+
+  function applyLanguage(lang){
+    const dict = I18N[lang] || I18N.pt;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined){
+        el.textContent = dict[key];
+      }
+    });
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+  }
+
+  if(localStorage.getItem('ravel_logged_in') === '1'){
+    entrarBtn.style.display = 'none';
+    profileMenu.style.display = 'inline-block';
+    pdName.textContent = (localStorage.getItem('ravel_user_name') || 'Torcedor').toUpperCase();
+  }
+  applyRegion();
+  buildRegionModal();
+  applyLanguage(localStorage.getItem('ravel_lang') || 'pt');
+
+  profileIconBtn.addEventListener('click', () => {
+    profileDropdown.classList.toggle('open');
+  });
+
+  pdRegionBtn.addEventListener('click', () => {
+    profileDropdown.classList.remove('open');
+    regionOverlay.classList.add('open');
+  });
+
+  regionClose.addEventListener('click', () => regionOverlay.classList.remove('open'));
+  regionOverlay.addEventListener('click', (e) => {
+    if(e.target === regionOverlay) regionOverlay.classList.remove('open');
+  });
+
+  function ravelLogout(){
+    localStorage.removeItem('ravel_logged_in');
+    window.location.href = 'index.html';
+  }
+
+  document.addEventListener('click', (e) => {
+    if(profileMenu && !profileMenu.contains(e.target)){
+      profileDropdown.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
