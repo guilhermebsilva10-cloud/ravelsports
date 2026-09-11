@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar — Ravel Sports</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .auth-wrap{
+    min-height:calc(100vh - 121px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:48px 20px;
+  }
+  .auth-card{
+    width:100%;
+    max-width:420px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:36px 32px;
+  }
+  .auth-logo{display:flex;justify-content:center;margin-bottom:26px;}
+  .auth-tabs{
+    display:flex;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:4px;
+    margin-bottom:26px;
+  }
+  .auth-tab{
+    flex:1;
+    text-align:center;
+    padding:10px 0;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--text-dim);
+    background:none;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.15s;
+  }
+  .auth-tab.active{background:var(--yellow);color:#231a00;}
+  .auth-panel{display:none;}
+  .auth-panel.active{display:block;}
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;
+    font-family:var(--font-mono);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--text-faint);
+    margin-bottom:7px;
+  }
+  .field input{
+    width:100%;
+    background:var(--ink);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:12px 13px;
+    color:var(--text);
+    font-size:14px;
+    font-family:var(--font-body);
+    transition:.15s;
+  }
+  .field input:focus{outline:none;border-color:var(--green);}
+  .field-hint{font-size:11.5px;color:var(--text-faint);margin-top:6px;}
+  .auth-submit{
+    width:100%;
+    margin-top:6px;
+    padding:13px;
+    font-size:14px;
+  }
+  .auth-alt{
+    text-align:center;
+    margin-top:20px;
+    font-size:13px;
+    color:var(--text-faint);
+  }
+  .auth-alt a{color:var(--green);font-weight:600;}
+  .auth-alt a:hover{text-decoration:underline;}
+  .auth-note{
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--text-faint);
+    margin-top:22px;
+  }
+  .form-msg{
+    display:none;
+    background:rgba(29,185,84,.1);
+    border:1px solid var(--green-dim);
+    color:var(--green);
+    font-size:13px;
+    padding:10px 12px;
+    border-radius:6px;
+    margin-bottom:16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="date">Sexta-feira, 7 de agosto de 2026</span>
+  </div>
+</div>
+
+<header class="main">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="a1">Ravel</span><span class="a2">Sports</span></a>
+    <nav class="primary" id="primary-nav">
+      <a href="index.html">Início</a>
+      <a href="index.html#futebol">Esportes diversos</a>
+    </nav>
+    <div class="header-actions">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <a href="index.html" class="logo"><span class="a1">Ravel</span><span class="a2">Sports</span></a>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-login" onclick="showPanel('login')">Entrar</button>
+      <button class="auth-tab" id="tab-signup" onclick="showPanel('signup')">Criar conta</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="auth-panel active" id="panel-login">
+      <form id="form-login" onsubmit="return handleSubmit(event, 'login')">
+        <div class="field">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" placeholder="seu@email.com" required>
+        </div>
+        <div class="field">
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha" placeholder="••••••••" required minlength="6">
+        </div>
+        <button type="submit" class="btn solid auth-submit">Entrar</button>
+      </form>
+      <div class="auth-alt">Ainda não tem conta? <a href="javascript:void(0)" onclick="showPanel('signup')">Crie a sua agora</a></div>
+    </div>
+
+    <!-- CADASTRO -->
+    <div class="auth-panel" id="panel-signup">
+      <form id="form-signup" onsubmit="return handleSubmit(event, 'signup')">
+        <div class="field">
+          <label for="signup-nome">Nome</label>
+          <input type="text" id="signup-nome" placeholder="Seu nome completo" required>
+        </div>
+        <div class="field">
+          <label for="signup-email">E-mail</label>
+          <input type="email" id="signup-email" placeholder="seu@email.com" required>
+        </div>
+        <div class="field">
+          <label for="signup-senha">Senha</label>
+          <input type="password" id="signup-senha" placeholder="Crie uma senha" required minlength="6">
+          <div class="field-hint">Mínimo de 6 caracteres.</div>
+        </div>
+        <button type="submit" class="btn solid auth-submit">Criar conta</button>
+      </form>
+      <div class="auth-alt">Já tem conta? <a href="javascript:void(0)" onclick="showPanel('login')">Entre aqui</a></div>
+    </div>
+
+    <div class="auth-note">Ao continuar, você concorda com os termos de uso do Ravel Sports.</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom" style="justify-content:center;border-top:none;padding-top:0;">
+      <span>&copy; 2026 Ravel Sports. Todos os direitos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function showPanel(name){
+    document.getElementById('panel-login').classList.toggle('active', name === 'login');
+    document.getElementById('panel-signup').classList.toggle('active', name === 'signup');
+    document.getElementById('tab-login').classList.toggle('active', name === 'login');
+    document.getElementById('tab-signup').classList.toggle('active', name === 'signup');
+  }
+
+  function handleSubmit(event, kind){
+    event.preventDefault();
+    // Demonstração: aqui entraria a chamada real para criar/autenticar a conta.
+    let nome = '';
+    if(kind === 'signup'){
+      nome = document.getElementById('signup-nome').value.trim();
+    } else {
+      nome = localStorage.getItem('ravel_user_name') || '';
+      if(!nome){
+        const email = document.getElementById('login-email').value.trim();
+        nome = email.split('@')[0];
+      }
+    }
+    if(nome){
+      localStorage.setItem('ravel_user_name', nome);
+    }
+    localStorage.setItem('ravel_logged_in', '1');
+    window.location.href = 'index.html';
+    return false;
+  }
+</script>
+
+</body>
+</html>
